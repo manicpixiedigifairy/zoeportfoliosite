@@ -99,11 +99,11 @@ h1{font:700 clamp(52px,6.6vw,104px)/1 var(--display);color:var(--bubble);text-wr
 .work-art{position:relative;aspect-ratio:4/5;overflow:hidden;container-type:inline-size}
 .work.live .work-art{aspect-ratio:auto;flex:1;min-height:340px;background:radial-gradient(circle,var(--ink) 0 17%,transparent 18%) 0 0/30px 30px,var(--blush)}
 .live-journal{position:absolute;left:50%;top:6%;height:72%;width:auto;max-width:none;transform:translateX(-50%) rotate(-5deg)}
-.lockup{position:absolute;left:0;right:0;bottom:7%;display:flex;flex-direction:column;align-items:center;transform:rotate(-4deg)}
+.lockup{position:absolute;z-index:1;left:0;right:0;bottom:7%;display:flex;flex-direction:column;align-items:center;transform:rotate(-4deg)}
 .lock-word{font:400 15cqi/.9 var(--cond);letter-spacing:.02em;color:var(--bubble);-webkit-text-stroke:.012em var(--ink);text-shadow:.05em .05em 0 var(--ink)}
 .lock-script{font:400 11cqi/1 var(--script);color:var(--ink);margin-top:-.05em;align-self:flex-end;padding-right:.3em}
 .live-kiss{position:absolute;right:5%;top:7%;width:22%;height:auto;transform:rotate(14deg)}
-.live-lockbadge{position:absolute;left:6%;top:6%;display:flex;align-items:center;gap:8px;background:var(--ink);color:var(--bubble);font:400 13px/1 var(--cond);letter-spacing:.08em;text-transform:uppercase;padding:9px 12px;transform:rotate(-3deg)}
+.live-lockbadge{position:absolute;z-index:2;left:6%;top:6%;display:flex;align-items:center;gap:8px;background:var(--ink);color:var(--bubble);font:400 13px/1 var(--cond);letter-spacing:.08em;text-transform:uppercase;padding:9px 12px;transform:rotate(-3deg)}
 .live-lockbadge svg{width:14px;height:14px;fill:currentColor}
 .work-cap{display:flex;flex-direction:column;gap:6px;padding:14px 12px 12px;color:var(--milk)}
 .work-kick{font:700 11px/1.3 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
@@ -191,6 +191,11 @@ a.chip:hover{background:var(--bubble);border-color:var(--bubble)}
   .works{grid-template-columns:repeat(2,minmax(0,1fr))}
   .work.live{grid-column:1 / -1;grid-row:auto}
   .work.live .work-art{aspect-ratio:4/3;flex:none;min-height:0}
+  .live-journal{left:27%;top:9%;height:82%}
+  .lockup{left:50%;right:3%;top:52%;bottom:auto;transform:translateY(-50%) rotate(-4deg)}
+  .lock-word{font-size:10.5cqi}
+  .lock-script{font-size:8cqi}
+  .live-kiss{width:17%;right:4%;top:auto;bottom:6%}
   .disc li{grid-template-columns:minmax(0,1fr) minmax(0,auto)}
   .disc li p{grid-column:1 / -1;grid-row:2}
   .about-box{margin-inline:0}
