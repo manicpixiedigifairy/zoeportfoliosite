@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Grenze+Gotisch:wght@600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,700;1,400&family=Pinyon+Script&display=swap">
 <style>
-/* Layout: one gutter for every band, black ground broken by blush ticker tapes, a hot pink work wall of tilted black frames, a framed About box with a chrome ribbon behind it. */
+/* Layout: one gutter for every band, black ground broken by blush ticker tapes, a hot pink work wall of tilted black frames, a framed About box. */
 :root{
   color-scheme:dark;
   --ink:#0B090A;
@@ -97,11 +97,12 @@ h1{font:700 clamp(52px,6.6vw,104px)/1 var(--display);color:var(--bubble);text-wr
 .work.live{grid-column:1 / span 2;grid-row:1 / span 2;text-decoration:none;color:var(--milk)}
 .work.live:hover{transform:rotate(0) scale(1.012)}
 .work-art{position:relative;aspect-ratio:4/5;overflow:hidden;container-type:inline-size}
-.work.live .work-art{aspect-ratio:auto;flex:1;min-height:340px;background:radial-gradient(circle,var(--ink) 0 17%,transparent 18%) 0 0/30px 30px,var(--blush)}
-.live-journal{position:absolute;left:50%;top:6%;height:72%;width:auto;max-width:none;transform:translateX(-50%) rotate(-5deg)}
-.lockup{position:absolute;z-index:1;left:0;right:0;bottom:7%;display:flex;flex-direction:column;align-items:center;transform:rotate(-4deg)}
-.lock-word{font:400 15cqi/.9 var(--cond);letter-spacing:.02em;color:var(--bubble);-webkit-text-stroke:.012em var(--ink);text-shadow:.05em .05em 0 var(--ink)}
-.lock-script{font:400 11cqi/1 var(--script);color:var(--ink);margin-top:-.05em;align-self:flex-end;padding-right:.3em}
+.work.live .work-art{aspect-ratio:auto;flex:1;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3cqi;padding:14cqi 8cqi 9cqi;background:radial-gradient(circle,var(--ink) 0 17%,transparent 18%) 0 0/30px 30px,var(--blush)}
+.live-jw{flex:1 1 0;min-height:0;width:62%}
+.live-journal{width:100%;height:100%;object-fit:contain;transform:rotate(-5deg)}
+.lockup{position:relative;z-index:1;flex:none;display:flex;flex-direction:column;align-items:center;transform:rotate(-4deg)}
+.lock-word{font:400 17cqi/.9 var(--cond);letter-spacing:.02em;color:var(--bubble);-webkit-text-stroke:.012em var(--ink);text-shadow:.05em .05em 0 var(--ink)}
+.lock-script{font:400 12cqi/1 var(--script);color:var(--ink);margin-top:-.05em;align-self:flex-end;padding-right:.3em}
 .live-kiss{position:absolute;right:5%;top:7%;width:22%;height:auto;transform:rotate(14deg)}
 .live-lockbadge{position:absolute;z-index:2;left:6%;top:6%;display:flex;align-items:center;gap:8px;background:var(--ink);color:var(--bubble);font:400 13px/1 var(--cond);letter-spacing:.08em;text-transform:uppercase;padding:9px 12px;transform:rotate(-3deg)}
 .live-lockbadge svg{width:14px;height:14px;fill:currentColor}
@@ -123,9 +124,6 @@ h1{font:700 clamp(52px,6.6vw,104px)/1 var(--display);color:var(--bubble);text-wr
 /* about */
 .about-sec{background:var(--ink-2);position:relative;overflow:hidden}
 .about-wrap{position:relative}
-.ribbon{position:absolute;pointer-events:none;z-index:0}
-.ribbon-a{left:calc(var(--gut) * -1 + 1%);top:-6%;width:clamp(150px,17vw,250px)}
-.ribbon-b{right:calc(var(--gut) * -1 + 1%);bottom:-8%;width:clamp(150px,17vw,250px);transform:scaleX(-1) rotate(8deg)}
 .about-box{position:relative;z-index:1;background:var(--ink);border:3px solid var(--hot);box-shadow:0 0 0 8px var(--ink),0 0 0 10px var(--hot);padding:clamp(28px,4.4vw,64px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center;margin-inline:clamp(0px,3vw,48px)}
 .stars{display:flex;gap:4px}
 .stars svg{width:14px;height:14px;fill:var(--hot)}
@@ -165,12 +163,9 @@ h1{font:700 clamp(52px,6.6vw,104px)/1 var(--display);color:var(--bubble);text-wr
 /* disciplines */
 .disc-sec{border-top:1px solid var(--line)}
 .disc{list-style:none;margin:clamp(36px,4vw,56px) 0 0;padding:0;border-top:3px solid var(--hot)}
-.disc li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) clamp(150px,14vw,200px);gap:clamp(16px,3vw,48px);align-items:baseline;padding-block:clamp(22px,2.6vw,34px);border-bottom:1px solid var(--line)}
+.disc li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:clamp(16px,3vw,48px);align-items:baseline;padding-block:clamp(22px,2.6vw,34px);border-bottom:1px solid var(--line)}
 .disc h3{font:400 clamp(26px,2.8vw,40px)/1.05 var(--cond);letter-spacing:.02em;text-transform:uppercase;color:var(--bubble)}
 .disc p{color:var(--muted);max-width:62ch}
-.chip{justify-self:end;white-space:nowrap;font:400 13px/1 var(--cond);letter-spacing:.1em;text-transform:uppercase;padding:9px 12px;border:2px solid var(--line);color:var(--muted)}
-a.chip{background:var(--hot);border-color:var(--hot);color:var(--ink);text-decoration:none}
-a.chip:hover{background:var(--bubble);border-color:var(--bubble)}
 
 /* footer */
 .foot{padding-block:var(--sec) clamp(28px,3vw,40px)}
@@ -191,15 +186,14 @@ a.chip:hover{background:var(--bubble);border-color:var(--bubble)}
   .works{grid-template-columns:repeat(2,minmax(0,1fr))}
   .work.live{grid-column:1 / -1;grid-row:auto}
   .work.live .work-art{aspect-ratio:4/3;flex:none;min-height:0}
-  .live-journal{left:27%;top:9%;height:82%}
-  .lockup{left:50%;right:3%;top:52%;bottom:auto;transform:translateY(-50%) rotate(-4deg)}
+  .work.live .work-art{flex-direction:row;gap:4cqi;padding:7cqi 6cqi}
+  .live-jw{flex:0 0 40%;width:auto;height:100%;max-height:none}
+  .lockup{flex:1 1 0;min-width:0}
   .lock-word{font-size:10.5cqi}
   .lock-script{font-size:8cqi}
   .live-kiss{width:17%;right:4%;top:auto;bottom:6%}
-  .disc li{grid-template-columns:minmax(0,1fr) minmax(0,auto)}
-  .disc li p{grid-column:1 / -1;grid-row:2}
+  .disc li{grid-template-columns:minmax(0,1fr);gap:12px}
   .about-box{margin-inline:0}
-  .ribbon-a{top:-3%}
 }
 @media (max-width:620px){
   .top-in{justify-content:center}
@@ -209,7 +203,6 @@ a.chip:hover{background:var(--bubble);border-color:var(--bubble)}
   .work-kick{font-size:10px;letter-spacing:.12em}
   .soon-tag{padding:10px 12px 9px}
   .soon-tag svg{width:16px;height:16px}
-  .ribbon{width:110px;opacity:.85}
   .about-box{box-shadow:0 0 0 5px var(--ink),0 0 0 7px var(--hot)}
   .pillars span:nth-child(2){-webkit-text-stroke:1.5px var(--bubble)}
 }
@@ -228,20 +221,6 @@ a.chip:hover{background:var(--bubble);border-color:var(--bubble)}
     <symbol id="bolt" viewBox="0 0 24 24"><path d="M13.5 2 4 14h6.5L9.5 22 20 9.5h-6.6z"/></symbol>
     <symbol id="starf" viewBox="0 0 24 24"><path d="m12 2 2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 21l1.6-7L2 9.2l7.1-.6z"/></symbol>
     <symbol id="tick" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#EE5DA5"/><path d="m7 12.4 3.2 3.2L17.2 8.6" fill="none" stroke="#0B090A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#FFE7F4"/>
-      <stop offset=".22" stop-color="#FF93CC"/>
-      <stop offset=".45" stop-color="#D92F88"/>
-      <stop offset=".62" stop-color="#FFC8E6"/>
-      <stop offset=".8" stop-color="#E24D9C"/>
-      <stop offset="1" stop-color="#8E0F55"/>
-    </linearGradient>
-    <symbol id="loop" viewBox="0 0 260 420">
-      <path d="M210 30C110 6 34 70 52 168c18 98 150 108 146 30-4-70-120-66-128 34-8 104 70 160 170 172" fill="none" stroke="#5E0A38" stroke-width="44" stroke-linecap="round"/>
-      <path d="M210 30C110 6 34 70 52 168c18 98 150 108 146 30-4-70-120-66-128 34-8 104 70 160 170 172" fill="none" stroke="url(#chrome)" stroke-width="36" stroke-linecap="round"/>
-      <path d="M204 22C110 2 40 66 48 160" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="5" stroke-linecap="round" transform="translate(4 -2)"/>
-      <path d="M78 240c-4 86 60 140 150 150" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="5" stroke-linecap="round" transform="translate(-10 0)"/>
-    </symbol>
   </defs>
 </svg>
 
@@ -286,8 +265,8 @@ a.chip:hover{background:var(--bubble);border-color:var(--bubble)}
     <a class="work live reveal" href="password-protected/index.html">
       <div class="work-art" role="img" aria-label="The unlocked pink journal with the Password Protected lockup and a kiss sticker on a polka dot ground">
         <span class="live-lockbadge"><svg aria-hidden="true"><use href="#unlock"/></svg>Unlocked</span>
+        <div class="live-jw"><img class="live-journal" src="assets/journal-open.webp" alt="" width="812" height="1253"></div>
         <div class="lockup" aria-hidden="true"><span class="lock-word">PASSWORD</span><span class="lock-script">Protected</span></div>
-        <img class="live-journal" src="assets/journal-open.webp" alt="" width="812" height="1253">
         <img class="live-kiss" src="assets/kiss.webp" alt="" width="420" height="316">
       </div>
       <div class="work-cap">
@@ -317,8 +296,6 @@ a.chip:hover{background:var(--bubble);border-color:var(--bubble)}
 
 <section class="band sec about-sec" id="about" aria-labelledby="h-about">
   <div class="about-wrap">
-    <svg class="ribbon ribbon-a" viewBox="0 0 260 420" aria-hidden="true"><use href="#loop"/></svg>
-    <svg class="ribbon ribbon-b" viewBox="0 0 260 420" aria-hidden="true"><use href="#loop"/></svg>
     <div class="about-box">
       <div class="about-copy">
         <div class="stars" aria-hidden="true"><svg><use href="#starf"/></svg><svg><use href="#starf"/></svg><svg><use href="#starf"/></svg><svg><use href="#starf"/></svg><svg><use href="#starf"/></svg></div>
@@ -363,27 +340,22 @@ a.chip:hover{background:var(--bubble);border-color:var(--bubble)}
     <li class="reveal">
       <h3>Illustrations &amp; Works</h3>
       <p>Whether it's a whimsical character, a stylized editorial piece or a conceptual visual metaphor, I use illustration to convey ideas that words alone can't capture, combining traditional sketching with digital painting.</p>
-      <a class="chip" href="password-protected/index.html">See Password Protected</a>
     </li>
     <li class="reveal">
       <h3>Branding &amp; Identity</h3>
       <p>Branding is about more than a logo. It's a personality, a voice and an emotional connection. I develop logos, identity systems, typography treatments and brand guidelines built from deep discovery and thoughtful strategy.</p>
-      <span class="chip">Coming Soon</span>
     </li>
     <li class="reveal">
       <h3>UI/UX &amp; Digital Interfaces</h3>
       <p>I focus on clarity, accessibility and responsive design for a positive experience across all devices. The goal is technology that feels human-centered, where form supports function and users feel guided rather than confused.</p>
-      <span class="chip">Coming Soon</span>
     </li>
     <li class="reveal">
       <h3>Motion Design &amp; Animation</h3>
       <p>Reel coming soon.</p>
-      <span class="chip">Coming Soon</span>
     </li>
     <li class="reveal">
       <h3>Photography &amp; Visual Content</h3>
       <p>My photography explores identity, space and texture for editorial, branding and content development. Through mindful composition and lighting, I create images that support a project's message while standing strong on their own.</p>
-      <span class="chip">Coming Soon</span>
     </li>
   </ul>
 </section>
