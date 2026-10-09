@@ -91,9 +91,9 @@ h1{font:700 clamp(52px,6.6vw,104px)/1 var(--display);color:var(--bubble);text-wr
 .work-sec .label{color:var(--ink)}
 .work-sec h2{color:var(--ink)}
 .work-sec .dek{color:#2A0E1D}
-.works{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(22px,2.6vw,40px);margin-top:clamp(40px,4.5vw,64px)}
+.works{--wgap:clamp(22px,2.6vw,40px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--wgap);margin-top:clamp(40px,4.5vw,64px)}
 .work{position:relative;display:flex;flex-direction:column;background:var(--ink);border:clamp(6px,.6vw,9px) solid var(--ink);box-shadow:0 20px 34px rgba(60,0,30,.38);transform:rotate(var(--rot,0deg));transition:transform .4s cubic-bezier(.2,1.4,.4,1);min-width:0}
-.work:nth-child(1){--rot:-1.4deg}.work:nth-child(2){--rot:2.2deg}.work:nth-child(3){--rot:-2.4deg}.work:nth-child(4){--rot:1.6deg}.work:nth-child(5){--rot:-1.2deg}
+.work:nth-child(1){--rot:-1.4deg}.work:nth-child(2){--rot:2.2deg}.work:nth-child(3){--rot:-2.4deg}.work:nth-child(4){--rot:1.6deg}.work:nth-child(5){--rot:-1.2deg}.work:nth-child(6){--rot:2deg}
 .work.live{grid-column:1 / span 2;grid-row:1 / span 2;text-decoration:none;color:var(--milk)}
 .work.live:hover{transform:rotate(0) scale(1.012)}
 .work-art{position:relative;aspect-ratio:4/5;overflow:hidden;container-type:inline-size}
@@ -117,6 +117,7 @@ h1{font:700 clamp(52px,6.6vw,104px)/1 var(--display);color:var(--bubble);text-wr
 .t2{background:repeating-linear-gradient(90deg,var(--blush) 0 16px,#FFC6E3 16px 32px)}
 .t3{background:radial-gradient(circle,#24161D 0 16%,transparent 17%) 0 0/22px 22px,#6B3962}
 .t4{background:radial-gradient(120% 90% at 25% 15%,#FFD3EA,#F27DB9 45%,#C0397E 80%)}
+.t5{background:conic-gradient(var(--bubble) 25%,var(--blush) 0 50%,var(--bubble) 0 75%,var(--blush) 0) 0 0/30px 30px}
 .soon-tag{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-6deg);display:flex;flex-direction:column;align-items:center;gap:6px;background:var(--ink);color:var(--bubble);padding:14px 16px 12px;box-shadow:5px 5px 0 var(--hot);white-space:nowrap}
 .soon-tag svg{width:22px;height:22px;fill:var(--bubble)}
 .soon-tag b{font:700 clamp(20px,13cqi,30px)/1 var(--display)}
@@ -185,6 +186,7 @@ h1{font:700 clamp(52px,6.6vw,104px)/1 var(--display);color:var(--bubble);text-wr
   .hero-photos{max-width:560px;margin-inline:auto}
   .works{grid-template-columns:repeat(2,minmax(0,1fr))}
   .work.live{grid-column:1 / -1;grid-row:auto}
+  .work:last-child{grid-column:1 / -1;justify-self:center;width:calc((100% - var(--wgap)) / 2)}
   .work.live .work-art{aspect-ratio:4/3;flex:none;min-height:0}
   .work.live .work-art{flex-direction:row;gap:4cqi;padding:7cqi 6cqi}
   .live-jw{flex:0 0 40%;width:auto;height:100%;max-height:none}
@@ -288,6 +290,10 @@ h1{font:700 clamp(52px,6.6vw,104px)/1 var(--display);color:var(--bubble);text-wr
       <div class="work-cap"><span class="work-kick">Case Study</span><h3 class="work-title">Motion Design &amp; Animation</h3></div>
     </article>
     <article class="work reveal" style="--d:360ms">
+      <div class="work-art t5"><span class="soon-tag"><svg aria-hidden="true"><use href="#lock"/></svg><b>Coming Soon</b></span></div>
+      <div class="work-cap"><span class="work-kick">Case Study</span><h3 class="work-title">Organic Social</h3></div>
+    </article>
+    <article class="work reveal" style="--d:450ms">
       <div class="work-art t4"><span class="soon-tag"><svg aria-hidden="true"><use href="#lock"/></svg><b>Coming Soon</b></span></div>
       <div class="work-cap"><span class="work-kick">Case Study</span><h3 class="work-title">UGC &amp; EGC</h3></div>
     </article>
@@ -314,7 +320,7 @@ h1{font:700 clamp(52px,6.6vw,104px)/1 var(--display);color:var(--bubble);text-wr
         <ul class="checks">
           <li><svg aria-hidden="true"><use href="#tick"/></svg>Background in computer science and education</li>
           <li><svg aria-hidden="true"><use href="#tick"/></svg>Avid media consumer and storyteller</li>
-          <li><svg aria-hidden="true"><use href="#tick"/></svg>Illustration, UI/UX, motion, branding, UGC and EGC</li>
+          <li><svg aria-hidden="true"><use href="#tick"/></svg>Illustration, UI/UX, motion, branding, organic social, UGC and EGC</li>
         </ul>
       </div>
     </div>
@@ -352,6 +358,10 @@ h1{font:700 clamp(52px,6.6vw,104px)/1 var(--display);color:var(--bubble);text-wr
     <li class="reveal">
       <h3>Motion Design &amp; Animation</h3>
       <p>Reel coming soon.</p>
+    </li>
+    <li class="reveal">
+      <h3>Organic Social</h3>
+      <p>Content made for the feed first. I handle social-first ideation, short-form video editing and caption writing, plus trend spotting, content calendars and community engagement that keep a brand's voice consistent and conversational.</p>
     </li>
     <li class="reveal">
       <h3>UGC &amp; EGC</h3>
