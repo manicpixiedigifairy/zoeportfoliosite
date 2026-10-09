@@ -57,16 +57,9 @@ h2{font:700 var(--h2)/1.02 var(--display);color:var(--bubble);text-wrap:balance;
 
 /* hero */
 .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(36px,6vw,96px);align-items:center}
-.hero-photos{position:relative;aspect-ratio:1/.9;width:100%;max-width:640px}
-.ph{position:absolute;width:55%;aspect-ratio:4/5;overflow:hidden;box-shadow:0 26px 44px rgba(0,0,0,.65)}
-.ph img{width:100%;height:100%;object-fit:cover}
-.ph-a{left:2%;top:2%;--r:-5deg;transform:rotate(var(--r))}
-.ph-b{right:2%;top:16%;--r:5deg;transform:rotate(var(--r));background:radial-gradient(circle,var(--ink) 0 17%,transparent 18%) 0 0/24px 24px,var(--blush)}
-.ph-b img{object-fit:contain;padding:8% 10%}
-@media (prefers-reduced-motion:no-preference){
-  .ph-a{animation:drop .9s .15s cubic-bezier(.2,1.5,.4,1) both}
-  .ph-b{animation:drop .9s .35s cubic-bezier(.2,1.5,.4,1) both}
-}
+.hero-photos{display:grid;place-items:center;width:100%;max-width:600px}
+.sticker{width:90%;height:auto;--r:-4deg;transform:rotate(var(--r))}
+@media (prefers-reduced-motion:no-preference){.sticker{animation:drop .9s .15s cubic-bezier(.2,1.5,.4,1) both}}
 @keyframes drop{from{transform:translateY(-26px) rotate(calc(var(--r) * 3))}to{transform:rotate(var(--r))}}
 .star{width:44px;height:44px;fill:var(--hot);margin-bottom:18px}
 .hero-copy{min-width:0}
@@ -174,7 +167,7 @@ h1{font:700 clamp(52px,6.6vw,104px)/1 var(--display);color:var(--bubble);text-wr
 
 @media (max-width:980px){
   .hero-grid,.about-box,.approach-grid{grid-template-columns:minmax(0,1fr)}
-  .hero-photos{max-width:560px;margin-inline:auto}
+  .hero-photos{max-width:440px;margin-inline:auto}
   .works{grid-template-columns:repeat(2,minmax(0,1fr))}
   .work.live{grid-column:1 / -1;grid-row:auto}
   .work.live .work-art{aspect-ratio:4/3;flex:none;min-height:0}
@@ -233,8 +226,7 @@ h1{font:700 clamp(52px,6.6vw,104px)/1 var(--display);color:var(--bubble);text-wr
 <section class="band sec" aria-labelledby="h-hero">
   <div class="hero-grid">
     <div class="hero-photos">
-      <figure class="ph ph-a" style="margin:0"><img src="assets/headshot.webp" alt="Portrait of Zoë Austin" width="533" height="666"></figure>
-      <figure class="ph ph-b" style="margin:0"><img src="assets/journal-locked.webp" alt="The pink locked journal from her Password Protected concept" width="812" height="1253"></figure>
+      <img class="sticker" src="assets/headshot-sticker.webp" alt="Portrait of Zoë Austin" width="879" height="1176">
     </div>
     <div class="hero-copy">
       <svg class="star" aria-hidden="true"><use href="#ast"/></svg>
